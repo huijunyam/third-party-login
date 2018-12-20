@@ -7,6 +7,44 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-button (click)="login()">Login with Google</ion-button>
+  <ion-button (click)="facebookLogin()">Login with Facebook</ion-button>
+  <ion-button (click)="verifyPhone()">Verify Phone Number</ion-button>
+  <ion-button (click)="registerNewUser()">Register new user</ion-button>
+  <ion-button (click)="activateSignin()">Sign in</ion-button>
+
+  <form [formGroup]="phoneNumberForm" *ngIf="verifyPhoneNumber" (ngSubmit)="validatePhoneNumber()">
+    <ion-item>
+      <ion-label position="stacked">Phone Number</ion-label>
+      <ion-input type="text" formControlName="phoneNumber"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit">Submit</ion-button>
+
+  </form>
+  <form [formGroup]="smsForm" *ngIf="verificationId" (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label position="stacked">SMS code</ion-label>
+      <ion-input type="text" formControlName="smsCode"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit">Verify</ion-button>
+  </form>
+
+  <h2 *ngIf="newUser">Register New User</h2>
+  <h2 *ngIf="signin">Sign in </h2>
+  <form *ngIf="newUser || signin" [formGroup]="userForm" (ngSubmit)="newUser ? register() : signinNow()">
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit">Submit</ion-button>
+  </form>
+
+  <h2 *ngIf="loginSuccess">Login Success</h2>
 </ion-content>

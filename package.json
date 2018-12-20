@@ -15,15 +15,31 @@
   "dependencies": {
     "@angular/common": "~7.0.0",
     "@angular/core": "~7.0.0",
-    "@angular/forms": "~7.0.0",
+    "@angular/forms": "^7.0.4",
     "@angular/http": "~7.0.0",
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@ionic-native/core": "5.0.0-beta.21",
+    "@ionic-native/facebook": "^5.0.0-beta.22",
+    "@ionic-native/firebase-authentication": "^5.0.0-beta.22",
+    "@ionic-native/google-plus": "^5.0.0-beta.21",
     "@ionic-native/splash-screen": "5.0.0-beta.21",
     "@ionic-native/status-bar": "5.0.0-beta.21",
     "@ionic/angular": "4.0.0-beta.16",
+    "cordova-android": "7.1.1",
+    "cordova-ios": "4.5.5",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-facebook4": "^4.0.0",
+    "cordova-plugin-firebase-authentication": "^1.0.1",
+    "cordova-plugin-googleplus": "^5.3.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^2.3.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-support-android-plugin": "^1.0.1",
+    "cordova-support-google-services": "^1.2.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
@@ -54,5 +70,34 @@
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.125097584214-729nffhtapmjc9c7pnb9ks34cikh3meo",
+        "WEB_APPLICATION_CLIENT_ID": "918743199091-rro0fjp9g7jnvk4ctd490a03r70jvkfa.apps.googleusercontent.com",
+        "PLAY_SERVICES_VERSION": "15.0.1"
+      },
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "292612578031833",
+        "APP_NAME": "igloohome-app",
+        "FACEBOOK_ANDROID_SDK_VERSION": "4.38.1"
+      },
+      "cordova-plugin-firebase-authentication": {
+        "FIREBASE_AUTH_VERSION": "16.0.+"
+      }
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
 }

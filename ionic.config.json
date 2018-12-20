@@ -1,5 +1,7 @@
 {
   "name": "third-party-login",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
